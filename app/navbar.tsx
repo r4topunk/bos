@@ -26,7 +26,7 @@ const Navbar = () => {
                             boxSize="2em"
                             size="sm"
                             name="Dan Abrahmov"
-                            src="https://bit.ly/dan-abramov"
+                            src="http://localhost:3000/forgot.png"
                         />}
                         border="1px solid"
                         p={5}

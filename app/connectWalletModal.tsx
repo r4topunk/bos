@@ -21,6 +21,7 @@ import {
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { useState } from 'react';
+import { on } from 'events';
 
 interface ConnectWalletModalProps {
     isOpen: boolean;
@@ -31,11 +32,13 @@ const ConnectWalletModal = ({ isOpen, onClose }: ConnectWalletModalProps) => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
 
+
+
     return (
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
             <ModalOverlay style={{ backdropFilter: 'blur(5px)' }} />
             <ModalContent
-                bg="gray.900"
+
                 border="6px solid pink"
                 boxShadow="0 0 8px 2px pink"
                 zIndex={2000}
@@ -99,7 +102,6 @@ const ConnectWalletModal = ({ isOpen, onClose }: ConnectWalletModalProps) => {
                             border="1px solid pink"
                             boxShadow="0 0 8px 2px pink"
                             colorScheme="orange"
-                            onClick={onClose}
                         >
                             Connect
                         </Button>
