@@ -1,17 +1,10 @@
-import { Box, Image, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react"
+import { Box, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react"
 import axios from "axios"
 import { stamp_ids } from "./../stampIDs"
 
 interface Holder {
   address: string
   quantity: number
-}
-
-interface StampHolders {
-  [holder: string]: {
-    stampId: number
-    quantity: number
-  }
 }
 
 interface StampRow {
@@ -22,7 +15,7 @@ interface StampRow {
       quantity: number
     },
   ]
-  total?: number
+  total: number
 }
 
 const fetchHolders = async (stamp_id: string): Promise<Holder[]> => {
@@ -64,11 +57,13 @@ async function NewHome() {
               quantity,
             },
           ],
-          total: quantity
+          total: quantity,
         })
       }
     })
   })
+
+  tableRows.sort((a, b) => b.total - a.total)
 
   return (
     <Box p={5} maxW={"100vw"} overflow={"scroll"}>
@@ -81,31 +76,30 @@ async function NewHome() {
             <Th minW={"80px"} border={"1px solid limegreen"} isNumeric>
               Total
             </Th>
-            {stamp_ids.map((id) => (
+            {/* {stamp_ids.map((id) => (
               <Th key={id} isNumeric>
-                <Box width={"120px"}>
+                <Box width={"60px"}>
                   <Image
                     src={`https://assets.stamped.ninja/${id}.png`}
                     alt={"stamp"}
-                    boxSize="120px"
                   />
                 </Box>
               </Th>
-            ))}
+            ))} */}
           </Tr>
         </Thead>
         <Tbody border={"1px solid limegreen"}>
           {tableRows.map((row) => (
             <Tr key={row.holder}>
               <Td border={"1px solid limegreen"}>{row.holder}</Td>
-              <Td border={"1px solid limegreen"}>{row.total}</Td>
-              {stamp_ids.map((stampID) => (
+              <Td border={"1px solid limegreen"} isNumeric textAlign={"center"}>{row.total}</Td>
+              {/* {stamp_ids.map((stampID) => (
                 <Td key={stampID} border={"1px solid limegreen"} isNumeric textAlign={"center"}>
                   {
                     row?.stamps?.find(stamp => stamp.id === stampID)?.quantity || 0
                   }
                 </Td>
-              ))}
+              ))} */}
             </Tr>
           ))}
         </Tbody>
