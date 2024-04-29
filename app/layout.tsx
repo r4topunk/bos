@@ -1,11 +1,9 @@
+import {
+  Box
+} from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {
-  Image,
-  Box,
-  Text,
-} from "@chakra-ui/react";
 import Navbar from "./navbar";
 const inter = Inter({ subsets: ["latin"] });
 
