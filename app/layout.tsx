@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Share_Tech_Mono } from "next/font/google"
 import "./globals.css"
 import Navbar from "./navbar"
-const inter = Inter({ subsets: ["latin"] })
+const share_tech_mono = Share_Tech_Mono({ subsets: ["latin"], weight: "400" })
 
 export const metadata: Metadata = {
   title: "BOS wallet",
@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        className={share_tech_mono.className}
         style={{
           backgroundImage:
             "url(https://upload.wikimedia.org/wikipedia/commons/1/17/Digital_rain_animation_small_letters_clear.gif)",

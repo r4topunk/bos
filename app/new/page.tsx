@@ -1,4 +1,15 @@
-import { Box, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Input,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react"
 import axios from "axios"
 import { stamp_ids } from "./../stampIDs"
 
@@ -70,14 +81,55 @@ async function NewHome() {
       maxW={"100vw"}
       color={"limegreen"}
       paddingY={"24px"}
+      maxWidth={"800px"}
+      margin={"auto"}
+    >
+      <Box
+        width={"100%"}
+        display={"flex"}
+        flexDir={"column"}
+        justifyContent={"center"}
+        alignContent={"center"}
+        alignItems={"center"}
+        padding={"24px"}
+        bg={"rgba(0, 0, 0, 0.8)"}
+        border="1.4px solid #00FF41"
+        boxShadow="0 0 4px #00FF41,0 0 8px #00FF41,0 0 8px #00FF41"
+        textShadow="0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41"
+        filter="blur(0.02rem)"
+        marginBottom={"42px"}
+        gap={"22px"}
+        color={"#00FF41"}
       >
+        <Text fontSize={"32px"}>Type your wallet</Text>
+        <Input
+          border="1.4px solid #00FF41"
+          padding={"6px 12px"}
+          bg={"black"}
+          type="text"
+          placeholder="0xWall3tAddr33s"
+          width={"320px"}
+          _focus={{
+            outline: "none",
+            boxShadow: "0 0 4px #00FF41,0 0 8px #00FF41,0 0 8px #00FF41",
+          }}
+        />
+        <Button
+          border="1.4px solid #00FF41"
+          padding={"6px 24px"}
+          _hover={{
+            textShadow: "0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41",
+            boxShadow: "0 0 4px #00FF41,0 0 8px #00FF41,0 0 8px #00FF41",
+          }}
+        >
+          Claim
+        </Button>
+      </Box>
       <Table
         bg={"rgba(0, 0, 0, 0.8)"}
         borderRadius={"10"}
         variant="simple"
         colorScheme="teal"
-        margin={"auto"}
-        maxWidth={"800px"}
         width={"100%"}
       >
         <Thead border={"1px solid limegreen"}>
@@ -102,9 +154,10 @@ async function NewHome() {
               _hover={{
                 border: "1.4px solid #00FF41",
                 boxShadow: "0 0 4px #00FF41,0 0 8px #00FF41,0 0 8px #00FF41",
-                textShadow: "0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41",
+                textShadow:
+                  "0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41",
                 filter: "blur(0.02rem)",
-                color: "#00FF41"
+                color: "#00FF41",
               }}
             >
               <Td border={"1px solid limegreen"} textAlign={"center"}>
