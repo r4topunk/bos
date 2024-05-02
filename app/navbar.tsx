@@ -11,7 +11,6 @@ const Navbar = () => {
     <Flex
       justifyContent="center"
       alignItems="center"
-      bg={"black"}
       color={"#00FF41"}
       textShadow="0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41"
       filter="blur(0.02rem)"
@@ -49,6 +48,7 @@ const Navbar = () => {
             colorScheme="purple"
             variant="outline"
             onClick={() => setIsOpen(true)}
+            bg={"rgba(0, 0, 0, 0.8)"}
           >
             Connect Wallet
           </Button>

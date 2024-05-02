@@ -68,11 +68,11 @@ async function NewHome() {
   return (
     <Box
       maxW={"100vw"}
-      bg={"black"}
       color={"limegreen"}
       paddingY={"24px"}
-    >
+      >
       <Table
+        bg={"rgba(0, 0, 0, 0.8)"}
         borderRadius={"10"}
         variant="simple"
         colorScheme="teal"
