@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <Box as="main" className={inter.className}>
+        <Box as="main">
           {children}
         </Box>
       </body>

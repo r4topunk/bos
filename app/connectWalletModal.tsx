@@ -1,27 +1,23 @@
-import React from 'react';
 import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
     Button,
-    InputGroup,
-    Input,
-    InputRightElement,
-    VStack,
-    Image,
     Center,
     IconButton,
+    Image,
+    Input,
+    InputGroup,
+    InputRightElement,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalHeader,
+    ModalOverlay,
     Text,
-    Divider
+    VStack
 } from '@chakra-ui/react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { useState } from 'react';
-import { on } from 'events';
 
 interface ConnectWalletModalProps {
     isOpen: boolean;
@@ -36,7 +32,7 @@ const ConnectWalletModal = ({ isOpen, onClose }: ConnectWalletModalProps) => {
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
-            <ModalOverlay style={{ backdropFilter: 'blur(5px)' }} />
+            <ModalOverlay bg={"rgb(0, 0, 0, 0.8)"}/>
             <ModalContent
 
                 border="6px solid pink"

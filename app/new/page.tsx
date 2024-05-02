@@ -66,40 +66,56 @@ async function NewHome() {
   tableRows.sort((a, b) => b.total - a.total)
 
   return (
-    <Box p={5} maxW={"100vw"} overflow={"scroll"}>
-      <Table borderRadius={"10"} variant="simple" colorScheme="teal">
+    <Box
+      maxW={"100vw"}
+      bg={"black"}
+      color={"limegreen"}
+      paddingY={"24px"}
+    >
+      <Table
+        borderRadius={"10"}
+        variant="simple"
+        colorScheme="teal"
+        margin={"auto"}
+        maxWidth={"800px"}
+        width={"100%"}
+      >
         <Thead border={"1px solid limegreen"}>
-          <Tr>
+          <Tr color={"#00FF41"}>
             <Th border={"1px solid limegreen"} isNumeric>
               Address
             </Th>
             <Th minW={"80px"} border={"1px solid limegreen"} isNumeric>
-              Total
+              Total Stamps
             </Th>
-            {/* {stamp_ids.map((id) => (
-              <Th key={id} isNumeric>
-                <Box width={"60px"}>
-                  <Image
-                    src={`https://assets.stamped.ninja/${id}.png`}
-                    alt={"stamp"}
-                  />
-                </Box>
-              </Th>
-            ))} */}
+            <Th minW={"80px"} border={"1px solid limegreen"} isNumeric>
+              Points
+            </Th>
           </Tr>
         </Thead>
         <Tbody border={"1px solid limegreen"}>
           {tableRows.map((row) => (
-            <Tr key={row.holder}>
-              <Td border={"1px solid limegreen"}>{row.holder}</Td>
-              <Td border={"1px solid limegreen"} isNumeric textAlign={"center"}>{row.total}</Td>
-              {/* {stamp_ids.map((stampID) => (
-                <Td key={stampID} border={"1px solid limegreen"} isNumeric textAlign={"center"}>
-                  {
-                    row?.stamps?.find(stamp => stamp.id === stampID)?.quantity || 0
-                  }
-                </Td>
-              ))} */}
+            <Tr
+              key={row.holder}
+              h={"45px"}
+              cursor={"grab"}
+              _hover={{
+                border: "1.4px solid #00FF41",
+                boxShadow: "0 0 4px #00FF41,0 0 8px #00FF41,0 0 8px #00FF41",
+                textShadow: "0 0 1px #00FF41,0 0 1.4px #00FF41,0 0 1.4px #00FF41",
+                filter: "blur(0.02rem)",
+                color: "#00FF41"
+              }}
+            >
+              <Td border={"1px solid limegreen"} textAlign={"center"}>
+                {row.holder}
+              </Td>
+              <Td border={"1px solid limegreen"} isNumeric textAlign={"center"}>
+                {row.total}
+              </Td>
+              <Td border={"1px solid limegreen"} isNumeric textAlign={"center"}>
+                {row.total * 3}
+              </Td>
             </Tr>
           ))}
         </Tbody>
